@@ -1,2 +1,141 @@
+body {
+  margin: 0px;
+  top: 0; }
+
 h1 {
-  color: #3b0c82; }
+  margin: 0; }
+
+h2 {
+  margin: 0; }
+
+.header {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 126px;
+  box-shadow: 0px 0 9px 0 rgba(0, 78, 194, 0.3); }
+
+.h-event {
+  position: relative; }
+  .h-event--first {
+    float: left;
+    width: 63px;
+    height: 126px;
+    box-shadow: 0px 4px 11px 0 rgba(19, 79, 215, 0.15);
+    border: solid 1px var(#e7ecf5);
+    background-color: var(#ffffff); }
+  .h-event--last {
+    float: right;
+    width: 59px;
+    height: 126px;
+    opacity: 0.93;
+    box-shadow: 0px 12px 9px 0 rgba(0, 78, 194, 0.15);
+    border: solid 1px #3b0c82;
+    background-color: #47109b; }
+
+.body {
+  padding-left: 60px;
+  padding-right: 60px;
+  left: 0px;
+  right: 0px; }
+
+.b-event--top {
+  height: 199px;
+  box-shadow: 0px 12px 9px 0 rgba(0, 78, 194, 0.15);
+  border: solid 1px #3b0c82;
+  background-color: #5522a3;
+  z-index: 1; }
+
+.b-event--middle {
+  display: table;
+  width: 100%; }
+  .b-event--middle_left {
+    display: table-cell;
+    width: 540px;
+    height: 631px;
+    box-shadow: 0px 2px 6.8px 0.2px rgba(80, 103, 218, 0.15);
+    background-color: #ffffff;
+    z-index: -1; }
+  .b-event--middle_right {
+    display: table-cell;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0;
+    right: 0;
+    z-index: -2;
+    min-width: 750px; }
+
+.b-items_choice {
+  height: 36px;
+  list-style-type: none;
+  color: #9274c5;
+  margin: 0;
+  padding: 47px 0 0 60px; }
+  .b-items_choice--left {
+    width: 131px;
+    height: 100%;
+    margin: 0;
+    top: 0;
+    display: inline-block; }
+  .b-items_choice--right {
+    width: 131px;
+    height: 100%;
+    margin: 0;
+    padding: 0 0 0 39px;
+    top: 0;
+    display: inline-block; }
+
+.b-items_hline {
+  right: 0;
+  height: 1px;
+  background-color: #ccd9ec;
+  margin-top: 4px; }
+  .b-items_hline--bottom {
+    margin-top: 1px;
+    right: 0;
+    height: 1px;
+    background-color: #ccd9ec; }
+
+.b-items-details {
+  height: 486px;
+  position: relative;
+  background-color: #f0f6ff; }
+  .b-items-details_inputs {
+    position: absolute;
+    height: 486px;
+    background-color: #f0f6ff; }
+  .b-items-details_vline {
+    position: absolute;
+    padding: 0;
+    margin: 0;
+    top: 0;
+    right: 332px;
+    width: 1px;
+    height: 485px;
+    bottom: 0;
+    background-color: #ccd9ec; }
+  .b-items-details_drops {
+    position: absolute;
+    padding: 0;
+    margin: 0;
+    height: 486px;
+    bottom: 0;
+    background-color: #f0f6ff; }
+
+.items_link {
+  font-size: 12px;
+  font-family: "Roboto", sans-serif;
+  line-height: 1.58;
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+  letter-spacing: -0.1px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal; }
+  .items_link--left {
+    padding: 0 0 0 23px; }
+
+.-active {
+  color: #5421a2;
+  border-bottom: 4px solid #5421a2; }
