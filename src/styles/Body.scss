@@ -3,20 +3,48 @@
     padding-right: 60px;
     left: 0px;
     right: 0px;
+    font-family: $LinkFontFamily;
+    font-style: $LinkFontStyle;
+    font-stretch: $LinkFontStretch;
 }
 
 .b-event{
     &--top{
+        display: table;
+        width: 100%;
         height: 199px;
         box-shadow: 0px 12px 9px 0 rgba(0, 78, 194, 0.15);
         border: solid 1px $indigo;
         background-color: $purple;
-        z-index: 1;
+        z-index: 5;
+        position: relative;
+        &_left{
+            display:table-cell;
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            right: 333px;
+            height: 100%;
+
+        }
+
+        &_right{
+            display:table-cell;
+            position: absolute;
+            width: 331px;
+            height: 100%;
+            display: table-cell;
+            padding: 0;
+            right: 0;
+            border-left: 1px solid $blurple;
+        }
     }
     &--middle{
         display: table;
         width: 100%;
         &_left{
+            position: relative;
             display: table-cell;
             width: 540px;
             height: 631px;
@@ -32,20 +60,192 @@
             padding: 0;
             right: 0;
             z-index: -2;
-            min-width: 750px;
+            //min-width: 750px;
         }
     }
 }
+.b-head{
+    &_search{
+        position: absolute;
+        top: 62px;
+        left: 62px;
+        right: 87px;
+        bottom: 72px;
+        height: 65px;
+        background-color: $white;
+        #b-head_search--name{
+            background-color: $white;
+            right: 0;
+            height: 100%;
+            color: $indigo-blue;
+            font-family: $LinkFontFamily;
+            font-size: 20px;
+            font-weight: 300;
+            font-style: normal;
+            font-stretch: normal;
+            line-height: 0.95;
+            letter-spacing: -0.3px;
+            opacity: 0.93;
+            border: 0;
+            padding: 0;
+            padding-left: 29px;
+            width: calc(100%-29px);
+        }
+        #b-head_search--save{
+            width: 173px;
+            position: absolute;
+            border: none;
+            top: 6px;
+            right: 7px;
+            bottom: 7px;
+            background-color: $white;
+            color: $warm-pink;
+            font-size: 13px;
+            font-family: $LinkFontFamily;
+            font-weight: 500;
+            font-style: normal;
+            font-stretch: normal;
+            line-height: 1.46;
+            letter-spacing: -0.1px;
+            text-align: center;
+            box-shadow: 0px 4px 11px 0 rgba(19, 79, 215, 0.15);
+            z-index: 50;
+        }
+    }
+    &_clocks{
+        position: absolute;
+        left: 32px;
+        right: 60px;
+        top: 54px;
+        bottom: 0px;
+        
 
+        &--left{
+            position: absolute;
+            top: 0px;
+            left: 0;
+            height: 82px;
+            width: 108px;
+
+            &_top{
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 47px;
+                width: 100%;
+                background: $white;
+                color: $dark-indigo;
+                font-weight: 500;
+                line-height: 47px;
+                text-align: center;
+                border-radius: 2px;
+                box-shadow: 0px 3px 9px 0 rgba(11, 40, 64, 0.15);
+                font-size: 16px;
+                font-weight: bold;
+            }
+            &_bottom{
+                position: absolute;
+                top: 48px;
+                left: 0;
+                height: 32px;
+                width: 100%;
+                background: $deep-lilac;
+                color: $pale-purple;
+                line-height: 32px;
+                text-align: center;
+                border-bottom-left-radius: 4px;
+                border-bottom-right-radius: 4px;
+                font-size: 13px;
+            }
+        }
+        &--right{
+            position: absolute;
+            top: 0px;
+            left: 132px;
+            height: 82px;
+            width: 108px;
+
+            &_top{
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 47px;
+                width: 100%;
+                background: $white;
+                color: $dark-indigo;
+                font-weight: 500;
+                line-height: 47px;
+                text-align: center;
+                border-radius: 2px;
+                box-shadow: 0px 3px 9px 0 rgba(11, 40, 64, 0.15);
+                font-size: 16px;
+                font-weight: bold;
+            }
+            &_bottom{
+                position: absolute;
+                top: 48px;
+                left: 0;
+                height: 32px;
+                width: 100%;
+                background: $deep-lilac;
+                color: $pale-purple;
+                line-height: 32px;
+                text-align: center;
+                border-bottom-left-radius: 4px;
+                border-bottom-right-radius: 4px;
+                font-size: 13px;
+            }
+        }
+        &--zone{
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                height: 63px;
+                margin-top: 19px;
+                text-align: center;
+                line-height: 63px;
+
+                a{
+                    text-decoration: underline;
+                    color: $deep-lilac;
+                    font-size: 12px;
+                }
+        }
+    }
+}
 .b-items{
     &_guests{
-
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 400px;
+        height: 500px;
+        padding: 0;
+        margin: 0;
+        h2{
+            position: absolute;
+            top: 63px;
+            color: $indigo-blue;
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 1.19;
+            letter-spacing: -0.3px;
+            left: 61px;
+        }
+        &--form{
+            position: absolute;
+            top: 99px;
+            left: 0px;
+            width: 100%;
+            height: 100%;
+            background-color: black;
+        }
     }
-    &_line{}
-    &_publish{}
+    
     &_choice{
         height: 36px;
-        //width: 795px;
+        width: 795px;
         list-style-type: none;
         color: $deep-lilac;
         margin: 0;
@@ -68,7 +268,12 @@
         }
 
     }
-    &_hline{
+    &-details{
+        height: 486px;
+        position: relative;
+        background-color: $very-light-blue;
+        margin-top: 4px;
+        &_hline{
         right: 0;
         height: 1px;
         background-color: $light-blue-grey-two;
@@ -81,12 +286,8 @@
             background-color: $light-blue-grey-two;
         }
     }
-    &-details{
-        height: 486px;
-        position: relative;
-        background-color: $very-light-blue;
         &_inputs{
-            position: absolute;
+            //position: absolute;
             height: 486px;
             background-color: $very-light-blue;
         }
@@ -95,9 +296,9 @@
             padding: 0;
             margin: 0;
             top: 0;
-            right: 332px;
+            right: 331px;
             width: 1px;
-            height: 485px;
+            height: 486px;
             bottom: 0;
             background-color: $light-blue-grey-two;
         }
@@ -114,21 +315,21 @@
 }
 
 .items_link{
-    font-size: $itemsLinkFontSize;
-    font-family: $itemsLinkFontFamily;
-    line-height: $itemsLinkLineHeight;
+    font-size: $itemsLinkFontSizeSmall;
+    font-family: $LinkFontFamily;
+    line-height: 1.58;
     display: inline-block;
     text-align: center;
     text-decoration: none;
     letter-spacing: -0.1px;
-    font-weight: $itemsLinkFontWeight;
-    font-style: $itemsLinkFontStyle;
-    font-stretch: $itemsLinkFontStretch;
+    font-weight: $LinkFontWeight;
+    font-style: $LinkFontStyle;
+    font-stretch: $LinkFontStretch;
     &--left{
         padding: 0 0 0 23px;
     }
 }
 .-active{
         color:$purple-two;
-        border-bottom: 4px solid $purple-two;
+        border-bottom: 4px solid $amethyst;
     }
