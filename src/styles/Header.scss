@@ -166,8 +166,8 @@
         background-color: transparent;
         .h-img-arrow{
                 position: absolute;
-                left: 0;
-                top: 57px;
+                left: 6px;
+                bottom: 64px;
             }
     }
     &--profile{
@@ -180,7 +180,7 @@
         .h-img-profile{
                 position: absolute;
                 left: 0;
-                top: 43px;
+                bottom: 46px;
             }
     }
     &--search{
@@ -190,10 +190,23 @@
         height: 126px;
         border: none;
         background-color: transparent;
-        .h-img-search{
-                position: absolute;
-                left: 0;
-                top: 39px;
+        .h-img-circle{
+            right: 22px;
+            position: absolute;
+            top: 39px;
+            width: 39px;
+            height: 39px;
+            margin: auto;
+            border-radius: 50%;
+            background-color: $warm-pink;
+            text-align: center;
+            z-index: -1;
+            .h-img-search{
+                    position: absolute;
+                    left: 13px;
+                    top: 13px;
+                    z-index: 100;
+                }
             }
     }
     

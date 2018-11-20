@@ -35,13 +35,14 @@ render(){
                 </div>
             </div>
             <div className='h-event--arrow'>
-                <img className='h-img-arrow' src="./src/images/ic-navigate-before-black-24-dp-1-x.png" alt="Menu"></img>
+                <img className='h-img-arrow' src="./src/images/shape-5.png" alt="Arrow"></img>
             </div>
             <div className='h-event--profile'>
-                <img className='h-img-profile' src="./src/images/ic-navigate-before-black-24-dp-1-x.png" alt="Menu"></img>
+                <img className='h-img-profile' src="./src/images/face.png" alt="Profile"></img>
             </div>
             <div className='h-event--search'>
-                <img className='h-img-search' src="./src/images/ic-navigate-before-black-24-dp-1-x.png" alt="Menu"></img>
+                <div className='h-img-circle'>
+                    <img className='h-img-search' src="./src/images/ic-search-18-pt.png" alt="Search"></img></div>
             </div>
         </header>
 
