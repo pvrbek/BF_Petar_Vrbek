@@ -17,7 +17,7 @@
         background-color: $white;
         text-align: center;
         border: none;
-
+        cursor: pointer;
     }
     &--middle{
         float:left;
@@ -46,6 +46,10 @@
                     font-weight: $LinkFontWeightBold;
                     font-style: $LinkFontStyle;
                     font-stretch: $LinkFontStretch;
+                    cursor: pointer;
+                    &:hover{
+                        background-color: $purple;
+                    }
                 }
             }
             .h-discard-container{
@@ -83,6 +87,7 @@
                             font-weight: $LinkFontWeight;
                             font-style: $LinkFontStyle;
                             font-stretch: $LinkFontStretch;
+                            cursor: pointer;
                         }
                     }
             }
@@ -121,6 +126,7 @@
                             font-weight: $LinkFontWeight;
                             font-style: $LinkFontStyle;
                             font-stretch: $LinkFontStretch;
+                            cursor: pointer;
                         }
                     }
             }
@@ -143,6 +149,7 @@
                 margin-left: auto;
                 margin-right: auto;
                 padding-top: 23px;
+                cursor: pointer;
             }
         }
         &_menu{
@@ -154,6 +161,7 @@
                 margin-left: auto;
                 margin-right: auto;
                 padding-top: 20px;
+                cursor: pointer;
             }
         }
     }
@@ -168,6 +176,7 @@
                 position: absolute;
                 left: 6px;
                 bottom: 64px;
+                cursor: pointer;
             }
     }
     &--profile{
@@ -181,6 +190,7 @@
                 position: absolute;
                 left: 0;
                 bottom: 46px;
+                cursor: pointer;
             }
     }
     &--search{
@@ -191,6 +201,7 @@
         border: none;
         background-color: transparent;
         .h-img-circle{
+            cursor: pointer;
             right: 22px;
             position: absolute;
             top: 39px;
@@ -200,13 +211,15 @@
             border-radius: 50%;
             background-color: $warm-pink;
             text-align: center;
-            z-index: -1;
             .h-img-search{
                     position: absolute;
                     left: 13px;
                     top: 13px;
                     z-index: 100;
                 }
+            &:hover{
+                background-color: $purple;
+            }
             }
     }
     

@@ -51,7 +51,8 @@
             box-shadow: 0px 2px 6.8px 0.2px rgba(80, 103, 218, 0.15);
             background-color: $white;
             //z-index: -1;
-        }
+            
+            }
 
         &_right{
             display: table-cell;
@@ -64,6 +65,7 @@
         }
     }
 }
+
 .b-head{
     &_search{
         position: absolute;
@@ -92,6 +94,7 @@
             box-sizing: border-box;
         }
         #b-head_search--save{
+            cursor: pointer;
             width: 173px;
             position: absolute;
             border: none;
@@ -110,6 +113,10 @@
             text-align: center;
             box-shadow: 0px 4px 11px 0 rgba(19, 79, 215, 0.15);
             z-index: 50;
+            &:hover{
+                background-color: $purple;
+                color: $white;
+            }
         }
     }
     &_checkbox{
@@ -120,10 +127,12 @@
 
         .first{
             display: inline-block;
+            cursor: pointer;
                     #b-check_all{
                         float: left;
                         color: $deep-lilac;
                         height: 15px;
+                        cursor: pointer;
                     }
                     .check--label{
                         float: left;
@@ -138,6 +147,7 @@
                         float: left;
                         background-color: $deep-lilac;
                         height: 15px;
+                        cursor: pointer;
                     }
                     .check--label{
                         float: left;
@@ -176,6 +186,7 @@
                 box-shadow: 0px 3px 9px 0 rgba(11, 40, 64, 0.15);
                 font-size: 16px;
                 font-weight: bold;
+                cursor: pointer;
             }
             &_bottom{
                 position: absolute;
@@ -190,6 +201,7 @@
                 border-bottom-left-radius: 4px;
                 border-bottom-right-radius: 4px;
                 font-size: 13px;
+                cursor: pointer;
             }
         }
         &--right{
@@ -214,6 +226,7 @@
                 box-shadow: 0px 3px 9px 0 rgba(11, 40, 64, 0.15);
                 font-size: 16px;
                 font-weight: bold;
+                cursor: pointer;
             }
             &_bottom{
                 position: absolute;
@@ -228,6 +241,7 @@
                 border-bottom-left-radius: 4px;
                 border-bottom-right-radius: 4px;
                 font-size: 13px;
+                cursor: pointer;
             }
         }
         &--zone{
@@ -244,6 +258,7 @@
                     text-decoration: underline;
                     color: $deep-lilac;
                     font-size: 12px;
+                    cursor: pointer;
                 }
         }
     }
@@ -271,7 +286,7 @@
             position: absolute;
             top: 99px;
             left: 0px;
-            width: 100%;
+            right: 15px;
             height: 500px;
             background-color:transparent;
             z-index: 100;
@@ -309,6 +324,10 @@
                     font-size: 12px;
                     font-weight: 500;
                     line-height: 37px;
+                    cursor: pointer;
+                    &:hover{
+                        background-color: $purple;
+                    }
                 }
             }
             &_checkbox{
@@ -325,6 +344,7 @@
                         float: left;
                         color: $white;
                         height: 15px;
+                        cursor: pointer;
                     }
                     .check--label{
                         float: left;
@@ -339,6 +359,7 @@
                         float: left;
                         color: $white;
                         height: 15px;
+                        cursor: pointer;
                     }
                     .check--label{
                         float: left;
@@ -354,6 +375,7 @@
                         color: $white;
                         height: 15px;
                         width: 15px;
+                        cursor: pointer;
                     }
                     .check--label{
                         float: left;
@@ -367,14 +389,17 @@
                 position: absolute;
                 top: 183px;
                 border-top: 1px solid $light-blue-grey-two;
+                border-left: none;
+                border-right: none;
                 left: 61px;
-                right: 78px;
+                width: 400px;
+                right: 80px;
                 .b-drop_container{
-                    padding-top: 34px;
+                    margin-top: 34px;
                     border-radius: 2px;
                     box-shadow: 0px 4px 11px 0 rgba(19, 79, 215, 0.15);
                     border:none;
-
+                    cursor: pointer;
                     #b-drop_container--left{
                         background: url(/src/images/shape-5.png) no-repeat right $indigo-blue;
                         background-position: right 17px center;
@@ -382,15 +407,16 @@
                         height: 40px;
                         width: 200px;
                         background-color: $white;
-                        border-top: 0;
-                        border-bottom: 0;
-                        border-left: 0;
+                        border-top: none;
+                        border-bottom: none;
+                        border-left: none;
                         border-right: 1px solid $light-blue-grey-two;
                         font-size: 18px;
                         color: $indigo-blue;
                         -webkit-appearance: none;
                         -moz-appearance: none;
                         appearance: none;
+                        cursor: pointer;
 
                     }
                     #b-drop_container--right{
@@ -406,13 +432,15 @@
                         -webkit-appearance: none;
                         -moz-appearance: none;
                         appearance: none;
+                        cursor: pointer;
                     }
 
                 }
             }
             &_disclaimer{
+                padding-top: 35px;
                 position: absolute;
-                top: 295px;
+                top: 260px;
                 left: 61px;
                 right: 78px;
                 p{
@@ -434,13 +462,21 @@
                     width: 100%;
                     height: 48px;
                     opacity: 0.93;
+                    border: none;
+                    font-family: $LinkFontFamily;
                     border-radius: 3.3px;
                     box-shadow: 0px 12px 9px 0 rgba(0, 78, 194, 0.15);
                     background-color: $indigo-blue;
                     color: $pale-grey;
                     font-size: 13px;
                     letter-spacing: -0.1px;
+                    cursor: pointer;
+
+                    &:hover{
+                        background-color: $warm-pink;
+                    }
                 }
+
             }
         }
     }
@@ -458,6 +494,7 @@
             margin: 0;
             top: 0;
             display: inline-block;
+            cursor: pointer;
         }
         &--right{
             
@@ -467,6 +504,7 @@
             padding: 0 0 0 39px;
             top: 0;
             display: inline-block;
+            cursor: pointer;
         }
 
     }
@@ -474,7 +512,7 @@
         height: 484px;
         position: relative;
         background-color: $very-light-blue;
-        margin-top: 4px;
+        margin-top: 5px;
         border-top: 1px solid $light-blue-grey-two;
         border-bottom: 1px solid $light-blue-grey-two;
         &_inputs{
@@ -483,6 +521,7 @@
             position: absolute;
             height: 484px;
             background-color: $very-light-blue;
+            border-bottom: 1px solid $light-blue-grey-two;
             .b-text_location{
                 position: absolute;
                 left: 0px;
@@ -550,6 +589,7 @@
         }
         }
         &_drops{
+            top: 0;
             right: 0;
             border-left: 1px solid $light-blue-grey-two;
             position: absolute;
@@ -559,30 +599,381 @@
             height: 484px;
             bottom: 0;
             background-color: $very-light-blue;
+            border-bottom: 1px solid $light-blue-grey-two;
 
             &--top{
                 position: absolute;
                 right:0px ;
                 top: 72px;
                 width: 100%;
-                height: 75px;
+                height: 104px;
+                .b-text_notification{
+                    position: absolute;
+                    margin-left: 31px;
+                    top: 0;
+                    left: 0;
+                    color: $deep-lilac;
+                    font-size: 13px;
+                    line-height: 1.46;
+                    letter-spacing: -0.1px;
+                    margin-top: 0;
+                    margin-bottom: 0;
+                }
+                .b-input_container{
+                    position: absolute;
+                    margin-left: 31px;
+                    top: 21px;
+                    left: 0;
+                    color: $deep-lilac;
+                    font-size: 13px;
+                    line-height: 1.46;
+                    letter-spacing: -0.1px;
+                    width: 247px;
+                    height: 60px;
+
+                    &--first{
+                        position: absolute;
+                        top: 0px;
+                        left: 0px;
+                        width: 89px;
+                        height: 28px;
+                        background-color: $white;
+
+                        #b-drop_first{
+                            position: absolute;
+                            background: url(/src/images/shape-5.png) no-repeat right $indigo-blue;
+                            background-position: right 11px center;
+                            padding-left: 11px;
+                            height: 100%;
+                            width: 100%;
+                            background-color: $white;
+                            border: none;
+                            border-radius: 4px;
+                            font-size: 12px;
+                            color: $indigo-blue;
+                            letter-spacing: -0.1px;
+                            -webkit-appearance: none;
+                            -moz-appearance: none;
+                            appearance: none;
+                            cursor: pointer;
+                        }
+                    }
+                    #b-input_container--middle{
+                        position: absolute;
+                        top: 0px;
+                        left: 94px;
+                        width: 39px;
+                        height: 26px;
+                        box-shadow: inset 0px 1px 2px 0 rgba(0, 43, 165, 0.1);
+                        background-color: $light-blue-grey;
+                        border: none;
+                        text-align: center;
+                    }
+                    &--last{
+                        position: absolute;
+                        top: 0px;
+                        left: 138px;
+                        width: 83px;
+                        height: 28px;
+                        background-color: $white;
+
+                        #b-drop_last{
+                            position: absolute;
+                            background: url(/src/images/shape-5.png) no-repeat right $indigo-blue;
+                            background-position: right 11px center;
+                            padding-left: 11px;
+                            height: 100%;
+                            width: 100%;
+                            background-color: $white;
+                            border: none;
+                            border-radius: 4px;
+                            font-size: 12px;
+                            letter-spacing: -0.1px;
+                            color: $indigo-blue;
+                            -webkit-appearance: none;
+                            -moz-appearance: none;
+                            appearance: none;
+                            cursor: pointer;
+                        }
+                    }
+                    &--remove{
+                        position: absolute;
+                        top: 10px;
+                        left: 232px;
+                        width: 9px;
+                        height: 9px;
+                        background: url(/src/images/remove.png) no-repeat center transparent;
+                        cursor: pointer;
+                    }
+                    &--add{
+                        position: absolute;
+                        top: 45px;
+                        left: 0px;
+                        width: 100%;
+                        height: 10px;
+                        line-height: 10px;
+                        color: $deep-lilac;
+                        cursor: pointer;
+                    }
+                }
             }
             &--middle{
                 position: absolute;
-                right:0px ;
+                left: 31px;
                 top: 186px;
-                width: 100%;
-                height: 50px;
+                width: 219px;
+                height: 52px;
+                .b-text_calendar{
+                    margin: 0;
+                    padding: 0;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    color: $deep-lilac;
+                    font-size: 13px;
+                    line-height: 1.46;
+                    letter-spacing: -0.1px;
+                }
+
+                .b-drop_container{
+                    position: absolute;
+                    top: 21px;
+                    left: 0;
+                    height: 28px;
+                    width: 219px;
+                    box-shadow: 0px 2px 6px 0 rgba(19, 79, 215, 0.1);
+                    #b-drop_users{
+                        position: absolute;
+                        left: 0;
+                        top:0;
+                        background: url(/src/images/shape-5.png) no-repeat right $indigo-blue;
+                        background-position: right 11px center;
+                        padding-left: 10px;
+                        height: 28px;
+                        width: 109px;
+                        background-color: $white;
+                        border-left: none;
+                        border-top: none;
+                        border-bottom: none;
+                        border-right: 1px right $light-blue-grey-two;
+                        border-top-left-radius: 4px;
+                        border-bottom-left-radius: 4px;
+                        font-size: 12px;
+                        color: $indigo-blue;
+                        letter-spacing: -0.1px;
+                        -webkit-appearance: none;
+                        -moz-appearance: none;
+                        appearance: none;
+                        cursor: pointer;
+                    }
+                    #b-drop_show{
+                        position: absolute;
+                        left: 109px;
+                        top:0;
+                        background: url(/src/images/shape-5.png) no-repeat right $indigo-blue;
+                        background-position: right 11px center;
+                        padding-left: 10px;
+                        height: 28px;
+                        width: 109px;
+                        background-color: $white;
+                        border: none;
+                        border-top-right-radius: 4px;
+                        border-bottom-right-radius: 4px;
+                        font-size: 12px;
+                        color: $indigo-blue;
+                        letter-spacing: -0.1px;
+                        -webkit-appearance: none;
+                        -moz-appearance: none;
+                        appearance: none;
+                        cursor: pointer;
+                    }
+                    }
             }
-            &--bottom{
+            &--bottom{  
                 position: absolute;
-                right:0px ;
+                left:31px;
                 top:266px ;
-                width: 100%;
-                height: 40px;
+                width: 250px;
+                height: 80px;
+
+                .b-text_color{
+                    margin: 0;
+                    padding: 0;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    color: $deep-lilac;
+                    font-size: 13px;
+                    line-height: 1.46;
+                    letter-spacing: -0.1px;
+                }
+
+                .b-color_container{ 
+                    position: absolute;
+                    display: block;
+                    top: 25px;
+                    left: 0;
+                    cursor: pointer;    
+                        
+                        .b-color--one{
+                            display: table-cell;
+                            height: 30px;
+                            width: 30px;
+                            border-radius: 50%;
+                            vertical-align: middle;
+                            text-align: center;
+                            
+                                div{
+                                    display:inline-block;
+                                    margin-top: 5px;
+                                    height: 15px;
+                                    width: 15px;
+                                background-color: $soft-blue;
+                                border-radius: 50%;
+                                }
+                                &:hover{
+                            border-radius: 50%;
+                            box-shadow: 0px 4px 11px 0 rgba(19, 79, 215, 0.15);
+                            background-color: $event-input;
+                        }
+                        }
+                        
+                        .b-color--two{
+                            display: table-cell;
+                            height: 30px;
+                            width: 30px;
+                            border-radius: 50%;
+                            vertical-align: middle;
+                            text-align: center;
+                            
+                                div{
+                                    display:inline-block;
+                                    margin-top: 5px;
+                                    height: 15px;
+                                    width: 15px;
+                                background-color: $pastel-blue;
+                                border-radius: 50%;
+                                }
+                                &:hover{
+                            border-radius: 50%;
+                            box-shadow: 0px 4px 11px 0 rgba(19, 79, 215, 0.15);
+                            background-color: $event-input;
+                        }
+                        }
+                        .b-color--three{
+                            display: table-cell;
+                            height: 30px;
+                            width: 30px;
+                            border-radius: 50%;
+                            vertical-align: middle;
+                            text-align: center;
+                            
+                                div{
+                                    display:inline-block;
+                                    margin-top: 5px;
+                                    height: 15px;
+                                    width: 15px;
+                                background-color: $amethyst;
+                                border-radius: 50%;
+                                }
+                                &:hover{
+                            border-radius: 50%;
+                            box-shadow: 0px 4px 11px 0 rgba(19, 79, 215, 0.15);
+                            background-color: $event-input;
+                        }
+                        }
+                        .b-color--four{
+                            display: table-cell;
+                            height: 30px;
+                            width: 30px;
+                            border-radius: 50%;
+                            vertical-align: middle;
+                            text-align: center;
+                            
+                                div{
+                                    display:inline-block;
+                                    margin-top: 5px;
+                                    height: 15px;
+                                    width: 15px;
+                                background-color: $aqua-marine;
+                                border-radius: 50%;
+                                }
+                                &:hover{
+                            border-radius: 50%;
+                            box-shadow: 0px 4px 11px 0 rgba(19, 79, 215, 0.15);
+                            background-color: $event-input;
+                        }
+                        }
+                        .b-color--five{
+                            display: table-cell;
+                            height: 30px;
+                            width: 30px;
+                            border-radius: 50%;
+                            vertical-align: middle;
+                            text-align: center;
+                            
+                                div{
+                                    display:inline-block;
+                                    margin-top: 5px;
+                                    height: 15px;
+                                    width: 15px;
+                                background-color: $light-gold;
+                                border-radius: 50%;
+                                }
+                                &:hover{
+                            border-radius: 50%;
+                            box-shadow: 0px 4px 11px 0 rgba(19, 79, 215, 0.15);
+                            background-color: $event-input;
+                        }
+                        }
+                        .b-color--six{
+                            display: table-cell;
+                            height: 30px;
+                            width: 30px;
+                            border-radius: 50%;
+                            vertical-align: middle;
+                            text-align: center;
+                            
+                                div{
+                                    display:inline-block;
+                                    margin-top: 5px;
+                                    height: 15px;
+                                    width: 15px;
+                                background-color: $salmon;
+                                border-radius: 50%;
+                                }
+                                &:hover{
+                            border-radius: 50%;
+                            box-shadow: 0px 4px 11px 0 rgba(19, 79, 215, 0.15);
+                            background-color: $event-input;
+                        }
+                        }
+                        .b-color--seven{
+                            display: table-cell;
+                            height: 30px;
+                            width: 30px;
+                            border-radius: 50%;
+                            vertical-align: middle;
+                            text-align: center;
+                            
+                                div{
+                                    display:inline-block;
+                                    margin-top: 5px;
+                                    height: 15px;
+                                    width: 15px;
+                                    background: url(/src/images/choose-button.png) no-repeat center;
+                                    border-radius: 50%;
+                                }
+                                
+                        &:hover{
+                            border-radius: 50%;
+                            box-shadow: 0px 4px 11px 0 rgba(19, 79, 215, 0.15);
+                            background-color: $event-input;
+                        }
+                        }
+                }
             }
         }
-
     }
 }
 

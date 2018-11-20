@@ -1,14 +1,36 @@
 import React, { Component } from "react";
 
 class Body extends React.Component{
+    constructor() {
+        super();
+        this.state = {
+            eventName: null
+        };
+
+        this.publish = this.publish.bind(this);
+        this.handleChange = this.handleChange.bind(this);
+    }
+
+    handleChange({ target }) {
+        this.setState({
+            [target.name]: target.value
+        });
+    }
+
+    publish() {
+        const eventName = this.state.eventName;
+        alert("Upisano ime eventa: "+ eventName);
+        
+    }
 render(){
     return(
         <div className="body">
             <div className="b-event--top">
                 <div className="b-event--top_left">
                     <div className='b-head_search'>
-                        <input id='b-head_search--name' type='text' defaultValue='Dribbble Meetup, Zagre' name='eventName'></input>
-                        <button id='b-head_search--save'>SAVE EVENT</button>
+                        <input id='b-head_search--name' type='text' defaultValue='Dribbble Meetup, Zagre' name='eventName' value={this.state.eventName}
+                            onChange={this.handleChange}></input>
+                        <button id='b-head_search--save' onClick={this.publish}>SAVE EVENT</button>
                     </div>
                     <div className="b-head_checkbox">
                             <div className='first'><input id='b-check_all' name='b-check_all' type='checkbox'></input><label className='check--label'>All day</label></div>
@@ -91,13 +113,51 @@ render(){
                         </div>
                         <div className="b-items-details_drops">
                             <div className="b-items-details_drops--top">
-                            
+                                <h3 className='b-text_notification'>Notifications</h3>
+                                <div className='b-input_container'>
+                                    <div className='b-input_container--first'>
+                                        <select id='b-drop_first'>
+                                            <option value='Email'>Email</option>
+                                            <option value='Browser'>Browser alert</option>
+                                        </select>
+                                    </div>
+                                    <input id='b-input_container--middle'></input>
+                                    <div className='b-input_container--last'>
+                                        <select id='b-drop_last'>
+                                            <option value='Minutes'>Minutes</option>
+                                            <option value='Hours'>Hours</option>
+                                        </select>
+                                    </div>
+                                    <div className='b-input_container--remove'></div>
+                                    <div className='b-input_container--add'>+ Add a notification</div>
+                                </div>
+                                
                             </div>
                             <div className="b-items-details_drops--middle">
-                            
+                                <h3 className='b-text_calendar'>Calendar</h3>
+                                    <div className='b-drop_container'>
+                                    <select id='b-drop_users'>
+                                        <option value='Public'>Mario Šestak</option>
+                                        <option value='Private'>Zoran Završki</option>
+                                        <option value='Default'>Tomislav Grubišić</option>
+                                    </select>
+                                    <select id='b-drop_show'>
+                                        <option value='More actions'>Show me as</option>
+                                        <option value='Repeating'>Owner</option>
+                                        <option value='Temporary'>Admin</option>
+                                    </select></div>
                             </div>
-                            <div className="b-items-details_drops-bottom">
-                            
+                            <div className="b-items-details_drops--bottom">
+                                <h3 className='b-text_color'>Event color</h3>
+                                <div className='b-color_container'>
+                                    <div className='b-color--one'><div></div></div>
+                                    <div className='b-color--two'><div></div></div>
+                                    <div className='b-color--three'><div></div></div>
+                                    <div className='b-color--four'><div></div></div>
+                                    <div className='b-color--five'><div></div></div>
+                                    <div className='b-color--six'><div></div></div>
+                                    <div className='b-color--seven'><div></div></div>
+                                </div>
                             </div>
                         </div>
                     </div>
