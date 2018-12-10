@@ -2,9 +2,8 @@ import React, { Component } from "react";
 import Axios from "axios";
 
 class Body extends React.Component{
-    constructor(props) {
-        super(props);
-        this.state = {
+    
+        state = {
             eventName: null,
             addGuest:null,
             checkAll:false,
@@ -21,10 +20,12 @@ class Body extends React.Component{
             notifNum:null,
             calUser:'Mario Šestak',
             calRole:'Show me as',
-            bornfightAPI:[],
+            bornfightAPI:['A','B','C'],
             bornfightAPI1:['A','B']
 
         };
+    constructor(props) {
+        super(props);
     }
     componentDidMount(){
         /*fetch('https://randomuser.me/api/?results=10')
@@ -40,12 +41,12 @@ class Body extends React.Component{
             });
         });*/
 
-        Axios.get('http://deghq.com/yapp/front-labs/jfed112018/data.json')
+        /*Axios.get('http://deghq.com/yapp/front-labs/jfed112018/data.json')
         .then(res => {
             const brnfght = res.data;
             this.setState({bornfightAPI:brnfght});
             console.log(this.state.bornfightAPI.eventType);
-        })
+        })*/
     }
 
     handleChange = () => {
@@ -75,6 +76,7 @@ render(){
                             <div className='first'><input id='b-check_all' name='checkAll' type='checkbox' onChange={this.handleChange}></input><label className='check--label'>All day</label></div>
                         <div className='last'><input id='b-check_repeat' name='checkRepeat' type='checkbox' onChange={this.handleChange}></input><label className='check--label'>Repeat</label></div>
                 </div>
+
                 </div>
                 <div className="b-event--top_right">
                     <div className='b-head_clocks'>
@@ -110,8 +112,8 @@ render(){
                         <div className='b-items_guests--form_drop'>
                                 <div className='b-drop_container'>
                                     <select id='b-drop_container--left' name='pickPrivacy' onChange={this.handleChange}>
-                                        {this.state.bornfightAPI.eventType.map(
-                                            (bf,key) => <option value='Proba' key={key}>{bf}</option>
+                                        {this.state.bornfightAPI.map(
+                                            (bf,index) => <option value='Proba' key={index}>{bf}</option>
                                         )}
                                         <option value='Public'>Public</option>
                                         <option value='Private'>Private</option>
