@@ -20,7 +20,7 @@ class Body extends React.Component{
             notifNum:null,
             calUser:'Mario Šestak',
             calRole:'Show me as',
-            bornfightAPI:['A','B','C'],
+            bornfightAPI:[],
             bornfightAPI1:['A','B']
 
         };
@@ -36,17 +36,14 @@ class Body extends React.Component{
                 return api;
             });
             console.log(initialAPI);
-            this.setState({
-                bornfightAPI: initialAPI
-            });
         });*/
 
-        /*Axios.get('http://deghq.com/yapp/front-labs/jfed112018/data.json')
+        Axios.get('http://deghq.com/yapp/front-labs/jfed112018/data.json')
         .then(res => {
             const brnfght = res.data;
             this.setState({bornfightAPI:brnfght});
-            console.log(this.state.bornfightAPI.eventType);
-        })*/
+            console.log(this.state.bornfightAPI.moreActions.values);
+        })
     }
 
     handleChange = () => {
@@ -112,17 +109,14 @@ render(){
                         <div className='b-items_guests--form_drop'>
                                 <div className='b-drop_container'>
                                     <select id='b-drop_container--left' name='pickPrivacy' onChange={this.handleChange}>
-                                        {this.state.bornfightAPI.map(
-                                            (bf,index) => <option value='Proba' key={index}>{bf}</option>
+                                        {this.state.bornfightAPI.eventType && this.state.bornfightAPI.eventType.map(
+                                            (bf,index) => <option value={bf} key={index}>{bf}</option>
                                         )}
-                                        <option value='Public'>Public</option>
-                                        <option value='Private'>Private</option>
-                                        <option value='Default'>Default</option>
                                     </select>
                                     <select id='b-drop_container--right' name='pickRepeating' onChange={this.handleChange}>
-                                        <option value='More actions'>More actions</option>
-                                        <option value='Repeating'>Repeating</option>
-                                        <option value='Temporary'>Temporary</option>
+                                        {this.state.bornfightAPI.moreActions && this.state.bornfightAPI.moreActions.values.map(
+                                            (values, index) => <option value={values} key={index}>{values}</option>
+                                        )}
                                     </select>
                                 </div>
                         </div> 
@@ -161,15 +155,17 @@ render(){
                                 <div className='b-input_container'>
                                     <div className='b-input_container--first'>
                                         <select id='b-drop_first' name='notifBy'  onChange={this.handleChange}>
-                                            <option value='Email'>Email</option>
-                                            <option value='Browser alert'>Browser alert</option>
+                                                {this.state.bornfightAPI.notifications && this.state.bornfightAPI.notifications.type.map(
+                                                    (values, index) => <option value={values} key={index}>{values}</option>
+                                                )}
                                         </select>
                                     </div>
                                     <input id='b-input_container--middle' name='notifNum' onChange={this.handleChange}></input>
                                     <div className='b-input_container--last'>
                                         <select id='b-drop_last' name='notifTime' onChange={this.handleChange}>
-                                            <option value='Minutes'>Minutes</option>
-                                            <option value='Hours'>Hours</option>
+                                            {this.state.bornfightAPI.notifications && this.state.bornfightAPI.notifications.time.map(
+                                                (values, index) => <option value={values} key={index}>{values}</option>
+                                            )}
                                         </select>
                                     </div>
                                     <div className='b-input_container--remove'></div>
@@ -182,14 +178,14 @@ render(){
                                 <h3 className='b-text_calendar'>Calendar</h3>
                                     <div className='b-drop_container'>
                                     <select id='b-drop_users' name='calName' onChange={this.handleChange}>
-                                        <option value='Public'>Mario Šestak</option>
-                                        <option value='Private'>Zoran Završki</option>
-                                        <option value='Default'>Tomislav Grubišić</option>
+                                        {this.state.bornfightAPI.calendar && this.state.bornfightAPI.calendar.users.map(
+                                            (values, index) => <option value={values} key={index}>{values}</option>
+                                        )}
                                     </select>
                                     <select id='b-drop_show' name='calRole' onChange={this.handleChange}>
-                                        <option value='Show me as'>Show me as</option>
-                                        <option value='Owner'>Owner</option>
-                                        <option value='Admin'>Admin</option>
+                                        {this.state.bornfightAPI.calendar && this.state.bornfightAPI.calendar.showAs.values.map(
+                                            (values, index) => <option value={values} key={index}>{values}</option>
+                                        )}
                                     </select></div>
                             </div>
                             <div className="b-items-details_drops--bottom">
