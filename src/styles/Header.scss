@@ -10,7 +10,7 @@
     position: relative;
     &--first{
         float:left;
-        width: 63px;
+        width: 60px;
         height: 126px;
         box-shadow: 0px 4px 11px 0 rgba(19, 79, 215, 0.15);
         border: solid 1px $pale-grey-two;
@@ -134,11 +134,11 @@
     }
     &--last{
         float: right;
-        width: 59px;
+        width: 60px;
         height: 126px;
         opacity: 0.93;
+        border: 0px; 
         box-shadow: 0px 12px 9px 0 rgba(0, 78, 194, 0.15);
-        border: solid 1px $indigo;
         background-color: $indigo-blue;
         &_notification{
             height: 50%;

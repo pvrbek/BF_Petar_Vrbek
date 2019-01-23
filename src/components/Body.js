@@ -20,32 +20,31 @@ class Body extends React.Component{
             notifNum:null,
             calUser:'Mario Šestak',
             calRole:'Show me as',
-            bornfightAPI:[],
-            bornfightAPI1:['A','B']
+            bornfightAPI:[]
 
         };
     constructor(props) {
         super(props);
     }
     componentDidMount(){
-        /*fetch('https://randomuser.me/api/?results=10')
-        .then(response => {
-            return response.json();
-        }).then(data => {
-            let initialAPI = data.results.map((api) => {
-                return api;
-            });
-            console.log(initialAPI);
-        });*/
-
+        if (localStorage.getItem('pickPrivacy')===null){
+        localStorage.setItem('pickPrivacy',this.state.pickPrivacy);}
+        if (localStorage.getItem('pickRepeating') === null) {
+        localStorage.setItem('pickRepeating', this.state.pickRepeating);}
+        if (localStorage.getItem('notifBy') === null) {
+        localStorage.setItem('notifBy', this.state.notifBy);}
+        if (localStorage.getItem('notifTime') === null) {
+        localStorage.setItem('notifTime', this.state.notifTime);}
+        if (localStorage.getItem('calUser') === null) {
+        localStorage.setItem('calUser', this.state.calUser);}
+        if (localStorage.getItem('calRole') === null) {
+        localStorage.setItem('calRole', this.state.calRole);}
         Axios.get('http://deghq.com/yapp/front-labs/jfed112018/data.json')
         .then(res => {
             const brnfght = res.data;
             this.setState({bornfightAPI:brnfght});
-            console.log(this.state.bornfightAPI.moreActions.values);
         })
     }
-
     handleChange = () => {
         const target = event.target;
         const value = target.type === 'checkbox' ? target.checked : target.value;
@@ -53,9 +52,8 @@ class Body extends React.Component{
         this.setState({
             [name]: value
         });
-        localStorage.setItem(name,JSON.stringify(value));
+        localStorage.setItem(name,value);
     }
-
     publish = () => {
         alert("Notifications: " + this.state.calRole);
         event.preventDefault();
@@ -108,10 +106,11 @@ render(){
                         </div>
                         <div className='b-items_guests--form_drop'>
                                 <div className='b-drop_container'>
-                                    <select id='b-drop_container--left' name='pickPrivacy' onChange={this.handleChange}>
+                                    <select id='b-drop_container--left' name='pickPrivacy' defaultValue={this.defVal} onChange={this.handleChange}>
                                         {this.state.bornfightAPI.eventType && this.state.bornfightAPI.eventType.map(
                                             (bf,index) => <option value={bf} key={index}>{bf}</option>
-                                        )}
+                                        )
+                                        }
                                     </select>
                                     <select id='b-drop_container--right' name='pickRepeating' onChange={this.handleChange}>
                                         {this.state.bornfightAPI.moreActions && this.state.bornfightAPI.moreActions.values.map(
@@ -202,7 +201,7 @@ render(){
                             </div>
                         </div>
                     </div>
-                </div>
+                                        </div>
             </div>
         </div>
 
